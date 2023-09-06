@@ -15,7 +15,7 @@ public class WashingMachineService extends AppliancesService {
 
     public double finalPrice(WashingMachine w){
         double add2 = 0.0;
-        double add1 = finalPrice(w.getPrice(), w.getEnergyConsumption());
+        double add1 = finalPrice(w.getWeight(), w.getEnergyConsumption());
         if (w.getCharge() > 30){ add2 = 500; }
         return (add1 + add2);
     }

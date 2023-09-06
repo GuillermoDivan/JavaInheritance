@@ -18,7 +18,7 @@ public class TelevisionService extends AppliancesService {
     }
 
     public double finalPrice(Television t){
-        double add1 = finalPrice(t.getPrice(), t.getEnergyConsumption());
+        double add1 = finalPrice(t.getWeight(), t.getEnergyConsumption());
         double add2 = add1;
         double add3 = 0.0;
         if (t.getResolution() > 40){ add2 *= 0.3; }
