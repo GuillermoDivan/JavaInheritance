@@ -6,7 +6,7 @@ public class Television extends Appliances {
 
     public Television(){}
 
-    public Television(double price, String colour, String energyConsumption, double weight, double resolution, boolean tdt) {
+    public Television(double price, Colour colour, EnergyConsumption energyConsumption, double weight, double resolution, boolean tdt) {
         super(price, colour, energyConsumption, weight);
         this.resolution = resolution;
         this.tdt = tdt;

@@ -9,9 +9,9 @@ public class AppliancesService {
 
     public Appliances createAppliances() {
         System.out.println("Ingrese color del electrodoméstico");
-        String colour = checkColour(input.next());
+        Colour colour = checkColour(input.next());
         System.out.println("Ingrese consumo de energía del electrodoméstico");
-        String energyConsumption = checkEnergyConsumption(input.next());
+        EnergyConsumption energyConsumption = checkEnergyConsumption(input.next());
         System.out.println("Ingrese peso del electrodoméstico");
         double weight = input.nextDouble();
         double basePrice = 1000;
@@ -22,40 +22,40 @@ public class AppliancesService {
     public void showPriceList() {
         double total = 0;
         for (Appliances a : appliancesList) {
-                System.out.println(a.getPrice());
-                total += a.getPrice();
-        } System.out.println("El valor total de los electrodomésticos es de $" + total + ".");
-    }
-
-    private String checkEnergyConsumption(String letter) {
-        switch (letter.toUpperCase()) {
-            case "A":
-            case "B":
-            case "C":
-            case "D":
-            case "E":
-                return letter;
-            default:
-                return "F";
+            System.out.println(a.getPrice());
+            total += a.getPrice();
         }
+        System.out.println("El valor total de los electrodomésticos es de $" + total + ".");
     }
 
-    private String checkColour(String colour) {
-        switch (colour.toLowerCase()) {
-            case "rojo":
-            case "negro":
-            case "azul":
-            case "gris":
-                return colour;
-            default:
-                return "blanco";
+    private EnergyConsumption checkEnergyConsumption(String letter) {
+        EnergyConsumption ene = null;
+        for (EnergyConsumption e : EnergyConsumption.values()) {
+            ene =  e.F;
+            if (letter.equalsIgnoreCase(e.name())) {
+                ene = e;
+                break;
+            }
+        } return ene;
+    }
+
+    private Colour checkColour(String colour) {
+        Colour col = null;
+        for (Colour c : Colour.values()) {
+            col = c.BLANCO;
+            if (colour.equalsIgnoreCase(c.name())) {
+                col = c;
+                break;
+            }
         }
+        return col;
     }
 
-    public double finalPrice(double weight, String energyConsumption) {
+
+    public double finalPrice(double weight, EnergyConsumption energyConsumption) {
         double add1 = 0.0;
         double add2;
-        switch (energyConsumption.toUpperCase()) {
+        switch (energyConsumption.name()) {
             case "A":
                 add1 = 1000;
             case "B":
@@ -83,11 +83,3 @@ public class AppliancesService {
 
 
 }
-
-/*
-Luego, recorrer este array y ejecutar el método precioFinal() en cada electrodoméstico. Se
-deberá también mostrar el precio de cada tipo de objeto, es decir, el precio de todos los
-televisores y el de las lavadoras. Una vez hecho eso, también deberemos mostrar, la
-suma del precio de todos los Electrodomésticos. Por ejemplo, si tenemos una lavadora
-con un precio de 2000 y un televisor de 5000, el resultado final será de 7000 (2000+5000)
-para electrodomésticos, 2000 para lavadora y 5000 para televisor.*/

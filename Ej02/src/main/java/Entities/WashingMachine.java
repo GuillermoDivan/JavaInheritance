@@ -5,7 +5,7 @@ public final class WashingMachine extends Appliances{
 
     public WashingMachine() {}
 
-    public WashingMachine(double price, String colour, String energyConsumption, double weight, double charge) {
+    public WashingMachine(double price, Colour colour, EnergyConsumption energyConsumption, double weight, double charge) {
         super(price, colour, energyConsumption, weight);
         this.charge = charge;
     }

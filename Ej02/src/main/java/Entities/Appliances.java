@@ -2,13 +2,13 @@ package Entities;
 
 public class Appliances {
     protected double price;
-    protected String colour;
-    protected String energyConsumption;
+    protected Colour colour = Colour.BLANCO;
+    protected EnergyConsumption energyConsumption = EnergyConsumption.F;
     protected double weight;
 
     public Appliances() {}
 
-    public Appliances(double price, String colour, String energyConsumption, double weight) {
+    public Appliances(double price, Colour colour, EnergyConsumption energyConsumption, double weight) {
         this.price = price;
         this.colour = colour;
         this.energyConsumption = energyConsumption;
@@ -23,19 +23,19 @@ public class Appliances {
         this.price = price;
     }
 
-    public String getColour() {
+    public Colour getColour() {
         return colour;
     }
 
-    public void setColour(String colour) {
+    public void setColour(Colour colour) {
         this.colour = colour;
     }
 
-    public String getEnergyConsumption() {
+    public EnergyConsumption getEnergyConsumption() {
         return energyConsumption;
     }
 
-    public void setEnergyConsumption(String energyConsumption) {
+    public void setEnergyConsumption(EnergyConsumption energyConsumption) {
         this.energyConsumption = energyConsumption;
     }
 

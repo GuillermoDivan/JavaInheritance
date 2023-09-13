@@ -1,7 +1,7 @@
 package Service;
 import Entities.Appliances;
 import Entities.Television;
-import Entities.WashingMachine;
+
 
 public class TelevisionService extends AppliancesService {
 

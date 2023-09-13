@@ -2,7 +2,6 @@ package Service;
 import Entities.Appliances;
 import Entities.WashingMachine;
 
-
 public class WashingMachineService extends AppliancesService {
 
     public WashingMachine createWashingMachine(){
